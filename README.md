@@ -105,7 +105,7 @@ fronto-form-test/
 1. Select a product (e.g., Laptop)
 2. Change quantity to 3+ to see the discount code field appear
 3. Change quantity to 6+ to see Express shipping become disabled
-4. Change quantity to 3+ to see Overnight shipping become disabled
+4. Change quantity to 3+ to see Overnight shipping become disabled (Overnight only available for ≤ 2 items)
 5. Enter discount code "BULK10" to see 10% discount applied
 6. Select shipping method to enable insurance option
 7. Toggle insurance to see total price update

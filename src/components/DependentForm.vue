@@ -197,15 +197,20 @@ const totalBeforeInsurance = computed(() => {
   return subtotal.value + shippingCost.value - discountAmount.value
 })
 
-// Computed: Insurance cost
-const insuranceAmount = computed(() => {
-  if (!formData.value.insurance) return 0
+// Computed: Insurance amount (base calculation)
+const insuranceBaseAmount = computed(() => {
   return Math.round(totalBeforeInsurance.value * 0.05)
 })
 
+// Computed: Insurance cost (actual amount when checked)
+const insuranceAmount = computed(() => {
+  if (!formData.value.insurance) return 0
+  return insuranceBaseAmount.value
+})
+
+// Computed: Insurance cost display string
 const insuranceCost = computed(() => {
-  const cost = Math.round(totalBeforeInsurance.value * 0.05)
-  return `$${cost} (5% of order)`
+  return `$${insuranceBaseAmount.value} (5% of order)`
 })
 
 // Computed: Total price
